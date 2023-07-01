@@ -6,7 +6,7 @@
 **     Component : BitIO
 **     Version   : Component 02.075, Driver 03.16, CPU db: 2.87.411
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 19/04/2023, 16:09
+**     Date/Time : 01/07/2023, 14:59
 **     Abstract  :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -18,20 +18,20 @@
 **             ----------------------------------------------------
 **                Number (on package)  |    Name
 **             ----------------------------------------------------
-**                       17            |  PB1_ADDR1_DATA1
+**                       4             |  PP0_PWM0_KWP0
 **             ----------------------------------------------------
 **
-**         Port name                   : B
+**         Port name                   : P
 **
-**         Bit number (in port)        : 1
-**         Bit mask of the port        : $0002
+**         Bit number (in port)        : 0
+**         Bit mask of the port        : $0001
 **
 **         Initial direction           : Input (direction cannot be changed)
 **         Initial output value        : 0
 **         Initial pull option         : up
 **
-**         Port data register          : PORTB     [$0001]
-**         Port control register       : DDRB      [$0003]
+**         Port data register          : PTP       [$0258]
+**         Port control register       : DDRP      [$025A]
 **
 **         Optimization for            : speed
 **     Contents  :

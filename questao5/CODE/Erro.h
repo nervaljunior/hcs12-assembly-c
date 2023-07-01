@@ -6,7 +6,7 @@
 **     Component : BitIO
 **     Version   : Component 02.075, Driver 03.16, CPU db: 2.87.411
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 19/04/2023, 15:08
+**     Date/Time : 01/07/2023, 14:55
 **     Abstract  :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -18,13 +18,13 @@
 **             ----------------------------------------------------
 **                Number (on package)  |    Name
 **             ----------------------------------------------------
-**                       22            |  PB6_ADDR6_DATA6
+**                       23            |  PB7_ADDR7_DATA7
 **             ----------------------------------------------------
 **
 **         Port name                   : B
 **
-**         Bit number (in port)        : 6
-**         Bit mask of the port        : $0040
+**         Bit number (in port)        : 7
+**         Bit mask of the port        : $0080
 **
 **         Initial direction           : Output (direction cannot be changed)
 **         Initial output value        : 0
@@ -78,7 +78,7 @@
 ** ===================================================================
 */
 #define Erro_GetVal() ( \
-    (bool)((getReg8(PORTB) & 0x40U))   /* Return port data */ \
+    (bool)((getReg8(PORTB) & 0x80U))   /* Return port data */ \
   )
 
 /*
@@ -108,7 +108,7 @@ void Erro_PutVal(bool Val);
 ** ===================================================================
 */
 #define Erro_ClrVal() ( \
-    (void)clrReg8Bits(PORTB, 0x40U)    /* BIT6=0x00U */ \
+    (void)clrReg8Bits(PORTB, 0x80U)    /* BIT7=0x00U */ \
   )
 
 /*
@@ -122,7 +122,7 @@ void Erro_PutVal(bool Val);
 ** ===================================================================
 */
 #define Erro_SetVal() ( \
-    (void)setReg8Bits(PORTB, 0x40U)    /* BIT6=0x01U */ \
+    (void)setReg8Bits(PORTB, 0x80U)    /* BIT7=0x01U */ \
   )
 
 #pragma CODE_SEG DEFAULT

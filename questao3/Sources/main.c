@@ -1,3 +1,5 @@
+#include <hidef.h>      /* common defines and macros */
+#include "derivative.h"      /* derivative-specific definitions */
 #include "Cpu.h"
 #include "Events.h"
 #include "A.h"
@@ -7,9 +9,10 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 
-void main(void)
-{
-    /* Write your local variable definition here */
+
+void main(void) {
+  /* put your own code here */
+	    /* Write your local variable definition here */
     short valueA;
     short factorial = 1;
     
@@ -34,6 +37,10 @@ void main(void)
     B_PutVal(factorial); // Enviar o valor do fatorial para a porta B
     
     /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-    for(;;){}
-    /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+
+  for(;;) {
+    _FEED_COP(); /* feeds the dog */
+  } /* loop forever */
+  /* please make sure that you never leave main */
 }
+

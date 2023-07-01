@@ -5,7 +5,7 @@
 **     Project   : Guia1
 **     Processor : MC9S12C128CFU16
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 19/04/2023, 14:13
+**     Date/Time : 30/06/2023, 18:28
 **     Abstract  :
 **        This file is used by the linker. It describes files to be linked,
 **        memory ranges, stack size, etc. For detailed description of the PRM file

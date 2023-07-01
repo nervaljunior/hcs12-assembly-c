@@ -4,7 +4,7 @@
 **     Processor : MC9S12C128CFU16
 **     Version   : Driver 01.14
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 14/08/2019, 07:30
+**     Date/Time : 30/06/2023, 18:30
 **     Abstract  :
 **         Main module.
 **         This module contains user's application code.
@@ -14,6 +14,23 @@
 **
 ** ###################################################################*/
 /* MODULE HelloWorld_C */
+/*
+UNIVERSIDADE FEDERAL DO MARANHÃO - UFMA
+CENTRO DE CIÊNCIAS EXATAS E TECNOLOGIA - CCET
+DISCIPLINA: ENGENHARIA ELÉTRICA
+
+
+NERVAL DE JESUS SANTOS JUNIOR
+Discente
+
+DENIVALDO LOPES
+Docente Responsável
+
+RELATÓRIO DA UNIDADE II SOBRE HCS12
+
+São Luís - MA
+2023
+*/
 
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
@@ -27,7 +44,8 @@
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include <math.h>
-float x1, x2, a, b, c, delta;
+float x1, x2,delta;
+float a,b,c;
 float x1Imag, x2Imag;
 
 void main(void)
@@ -39,15 +57,17 @@ void main(void)
   /*** End of Processor Expert internal initialization.                    ***/
 
   /* Write your code here */
+  a=PORTA;
+  b=PORTB;
+  c=PTT;
   x1=0;
   x2=0;
   delta=0;
   x1Imag=0;
   x2Imag=0;
-  a=2;
-  b=3;
-  c=2;
   
+  
+  // função do delta da equação do segundo grau
   delta=b*b - 4*a*c;
   if(delta ==0){
   // raizes reais iguais
@@ -68,7 +88,7 @@ void main(void)
   /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
   for(;;){}
   /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
-} /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+  } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END HelloWorld_C */
 /*

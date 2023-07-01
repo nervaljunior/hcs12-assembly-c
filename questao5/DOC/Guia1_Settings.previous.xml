@@ -334,7 +334,7 @@ asm(BGND);
 
     <Properties>
       <Component_name v="A"/>
-      <Pin_for_I_O v="PB2_ADDR2_DATA2"/>
+      <Pin_for_I_O v="PB1_ADDR1_DATA1"/>
       <Pin_signal v=""/>
       <Pull_resistor v="pull up"/>
       <Open_drain sel_value="The settings is irrelevant for input direction" v="push-pull"/>
@@ -370,7 +370,7 @@ asm(BGND);
 
     <Properties>
       <Component_name v="B"/>
-      <Pin_for_I_O v="PB3_ADDR3_DATA3"/>
+      <Pin_for_I_O v="PB2_ADDR2_DATA2"/>
       <Pin_signal v=""/>
       <Pull_resistor v="pull up"/>
       <Open_drain sel_value="The settings is irrelevant for input direction" v="push-pull"/>
@@ -406,7 +406,7 @@ asm(BGND);
 
     <Properties>
       <Component_name v="C"/>
-      <Pin_for_I_O v="PB4_ADDR4_DATA4"/>
+      <Pin_for_I_O v="PB3_ADDR3_DATA3"/>
       <Pin_signal v=""/>
       <Pull_resistor v="pull up"/>
       <Open_drain sel_value="The settings is irrelevant for input direction" v="push-pull"/>
@@ -442,7 +442,7 @@ asm(BGND);
 
     <Properties>
       <Component_name v="D"/>
-      <Pin_for_I_O v="PB1_ADDR1_DATA1"/>
+      <Pin_for_I_O v="PB0_ADDR0_DATA0"/>
       <Pin_signal v=""/>
       <Pull_resistor v="pull up"/>
       <Open_drain sel_value="The settings is irrelevant for input direction" v="push-pull"/>
@@ -514,7 +514,7 @@ asm(BGND);
 
     <Properties>
       <Component_name v="Erro"/>
-      <Pin_for_I_O v="PB6_ADDR6_DATA6"/>
+      <Pin_for_I_O v="PB7_ADDR7_DATA7"/>
       <Pin_signal v=""/>
       <Pull_resistor v="pull up"/>
       <Open_drain v="push-pull"/>

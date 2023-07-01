@@ -7,7 +7,7 @@
 **     Version   : Component 02.001, Driver 02.06, CPU db: 2.87.411
 **     Datasheet : MC9S12C128 Rev 01.23 05/2007
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 19/04/2023, 15:47
+**     Date/Time : 30/06/2023, 18:28
 **     Abstract  :
 **         This component "MC9S12C32_80" implements properties, methods,
 **         and events of the CPU.

@@ -6,7 +6,7 @@
 **     Component : BitIO
 **     Version   : Component 02.075, Driver 03.16, CPU db: 2.87.411
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 19/04/2023, 16:09
+**     Date/Time : 01/07/2023, 14:59
 **     Abstract  :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -18,13 +18,13 @@
 **             ----------------------------------------------------
 **                Number (on package)  |    Name
 **             ----------------------------------------------------
-**                       19            |  PB3_ADDR3_DATA3
+**                       18            |  PB2_ADDR2_DATA2
 **             ----------------------------------------------------
 **
 **         Port name                   : B
 **
-**         Bit number (in port)        : 3
-**         Bit mask of the port        : $0008
+**         Bit number (in port)        : 2
+**         Bit mask of the port        : $0004
 **
 **         Initial direction           : Input (direction cannot be changed)
 **         Initial output value        : 0
@@ -75,7 +75,7 @@
 ** ===================================================================
 */
 #define C_GetVal() ( \
-    (bool)((getReg8(PORTB) & 0x08U))   /* Return port data */ \
+    (bool)((getReg8(PORTB) & 0x04U))   /* Return port data */ \
   )
 
 #pragma CODE_SEG DEFAULT
