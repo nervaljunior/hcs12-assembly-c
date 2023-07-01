@@ -7,7 +7,7 @@
 **     Version   : Component 02.001, Driver 02.06, CPU db: 2.87.411
 **     Datasheet : MC9S12C128 Rev 01.23 05/2007
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 01/07/2023, 14:59
+**     Date/Time : 01/07/2023, 16:46
 **     Abstract  :
 **         This component "MC9S12C32_80" implements properties, methods,
 **         and events of the CPU.
@@ -34,6 +34,7 @@
 #include "E.h"
 #include "Erro.h"
 #include "S.h"
+#include "I.h"
 #include "Events.h"
 #include "Cpu.h"
 
@@ -217,8 +218,8 @@ void PE_low_level_init(void)
   setReg8Bits(PUCR, 0x02U);             
   /* PORTB: BIT7=0,BIT5=0,BIT4=0 */
   clrReg8Bits(PORTB, 0xB0U);            
-  /* DDRB: BIT7=1,BIT5=1,BIT4=1,BIT3=0,BIT2=0,BIT1=0 */
-  clrSetReg8Bits(DDRB, 0x0EU, 0xB0U);   
+  /* DDRB: BIT7=1,BIT5=1,BIT4=1,BIT3=0,BIT2=0,BIT1=0,BIT0=0 */
+  clrSetReg8Bits(DDRB, 0x0FU, 0xB0U);   
   /* CRGINT: LOCKIE=0,SCMIE=0 */
   clrReg8Bits(CRGINT, 0x12U);           
   /* VREGCTRL: LVIE=0 */
@@ -247,6 +248,7 @@ void PE_low_level_init(void)
   /* ### BitIO "E" init code ... */
   /* ### BitIO "Erro" init code ... */
   /* ### BitIO "S" init code ... */
+  /* ### BitIO "I" init code ... */
   __EI();                              /* Enable interrupts */
 }
 

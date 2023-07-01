@@ -5,7 +5,7 @@
 **     Processor : MC9S12C128CFU16
 **     Version   : Component 02.001, Driver 02.06, CPU db: 2.87.411
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 30/06/2023, 18:28
+**     Date/Time : 01/07/2023, 16:46
 **     Abstract  :
 **         This component "MC9S12C32_80" implements properties, methods,
 **         and events of the CPU.
@@ -25,6 +25,7 @@
 #include "E.h"
 #include "Erro.h"
 #include "S.h"
+#include "I.h"
 
 /* ISR prototype */
 typedef void (*near tIsrFunc)(void);

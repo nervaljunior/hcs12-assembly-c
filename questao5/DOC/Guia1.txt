@@ -63,6 +63,11 @@ Module "S"         (component BitIO)
    - S_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
                 direction = _[output]_ or _[input/output]_.
 
+Module "I"         (component BitIO)
+   - I_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and returned.
+                If the direction is [output] then the last written value is returned (see <Safe mode> property for limitations).
+                This method cannot be disabled if direction is [input].
+
 Module "Cpu"       (component MC9S12C32_80)
    - Cpu_EnableInt -Enable maskable interrupts
    - Cpu_DisableInt -Disable maskable interrupts

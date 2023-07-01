@@ -30,6 +30,7 @@
 #include "E.h"
 #include "Erro.h"
 #include "S.h"
+#include "I.h"
 
 #pragma CODE_SEG DEFAULT
 

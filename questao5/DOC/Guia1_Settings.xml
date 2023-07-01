@@ -581,4 +581,40 @@ asm(BGND);
     </Events>
   </Bean>
 
+  <Bean name="I" type="BitIO">
+    <Enabled v="Y"/>
+
+    <Properties>
+      <Component_name v="I"/>
+      <Pin_for_I_O v="PB0_ADDR0_DATA0"/>
+      <Pin_signal v=""/>
+      <Pull_resistor v="pull up"/>
+      <Open_drain sel_value="The settings is irrelevant for input direction" v="push-pull"/>
+      <Reduced_drive_for_port_B v="no"/>
+      <Direction v="Input"/>
+      <group name="Initialization">
+        <Init__direction v="Input"/>
+        <Init__value v="0"/>
+      </group>
+      <Safe_mode v="yes"/>
+      <Optimization_for v="speed"/>
+    </Properties>
+
+    <Methods>
+      <GetDir v="don&apos;t generate code"/>
+      <SetDir v="don&apos;t generate code"/>
+      <SetInput v="don&apos;t generate code"/>
+      <SetOutput v="don&apos;t generate code"/>
+      <GetVal v="generate code"/>
+      <PutVal v="don&apos;t generate code"/>
+      <ClrVal v="don&apos;t generate code"/>
+      <SetVal v="don&apos;t generate code"/>
+      <NegVal v="don&apos;t generate code"/>
+      <GetRawVal v="don&apos;t generate code"/>
+    </Methods>
+
+    <Events>
+    </Events>
+  </Bean>
+
 </PE_PROJECT_SETTINGS_DOCUMENTATION>
