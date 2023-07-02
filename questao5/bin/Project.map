@@ -24,7 +24,8 @@ STARTUP SECTION
 Entry point: 0xC002 (_EntryPoint)
 _startupData is allocated at 0xC01A and uses 6 Bytes
 extern struct _tagStartup {
-  unsigned nofZeroOut     0
+  unsigned nofZeroOut     1
+  _Range   pZeroOut       0x3000     2
   _Copy    *toCopyDownBeg 0xC02F
 } _startupData;
 
@@ -36,7 +37,7 @@ Section Name                    Size  Type     From       To       Segment
 .startData                        10     R     0xC01A     0xC023   ROM_C000
 NON_BANKED                        11     R     0xC024     0xC02E   ROM_C000
 .copy                              2     R     0xC02F     0xC030   ROM_C000
-.text                            230     R   0x3DB000   0x3DB0E5   PAGE_3D_B000
+.text                            233     R   0x3DB000   0x3DB0E8   PAGE_3D_B000
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
 .abs_section_9                     1   N/I        0x9        0x9   .absSeg1
 .abs_section_a                     1   N/I        0xA        0xA   .absSeg2
@@ -259,11 +260,12 @@ NON_BANKED                        11     R     0xC024     0xC02E   ROM_C000
 .abs_section_16e                   2   N/I      0x16E      0x16F   .absSeg219
 .abs_section_17e                   2   N/I      0x17E      0x17F   .absSeg220
 .abs_section_ff80                128     R     0xFF80     0xFFFF   .absSeg221
-.stack                           128   R/W     0x3000     0x307F   RAM
+.common                            2   R/W     0x3000     0x3001   RAM
+.stack                           128   R/W     0x3002     0x3081   RAM
 
 Summary of section sizes per section type:
-READ_ONLY (R):         197 (dec:      407)
-READ_WRITE (R/W):       80 (dec:      128)
+READ_ONLY (R):         19A (dec:      410)
+READ_WRITE (R/W):       82 (dec:      130)
 NO_INIT (N/I):         104 (dec:      260)
 
 *********************************************************************************************
@@ -282,7 +284,7 @@ MODULE:                 -- Start12.c.o --
 - VARIABLES:
      _startupData                              C01A       6       6       3   .startData  
 - LABELS:
-     __SEG_END_SSTACK                          3080       0       0       1               
+     __SEG_END_SSTACK                          3082       0       0       1               
 MODULE:                 -- Cpu.c.o --
 - PROCEDURES:
      PE_low_level_init                       3DB029      42      66       2   .text       
@@ -519,8 +521,9 @@ MODULE:                 -- Vectors.c.o --
      _InterruptVectorTable                     FF80      80     128       0   .abs_section_ff80
 MODULE:                 -- Guia1.c.o --
 - PROCEDURES:
-     main                                    3DB06B      7B     123       2   .text       
+     main                                    3DB06B      7E     126       2   .text       
 - VARIABLES:
+     SYSTEM                                    3000       2       2       2   .common     
 
 *********************************************************************************************
 MODULE STATISTIC
@@ -530,7 +533,7 @@ MODULE STATISTIC
   Cpu.c.o                                      0     92      0
   IO_Map.c.o                                 260      0      0
   Vectors.c.o                                  0      0    128
-  Guia1.c.o                                    0    123      0
+  Guia1.c.o                                    2    126      0
   other                                      128     10      2
 
 *********************************************************************************************
@@ -542,6 +545,8 @@ SECTION: ".init"
   Cpu_Interrupt _EntryPoint 
 SECTION: "NON_BANKED"
   _Startup 
+SECTION: ".common"
+  SYSTEM 
 SECTION: ".abs_section_8"
   _PORTE 
 SECTION: ".abs_section_9"
@@ -1212,13 +1217,14 @@ OBJECT LIST SORTED BY ADDRESS
      _RDRAD                                     273       1       1       1   .abs_section_273
      _PERAD                                     274       1       1       0   .abs_section_274
      _PPSAD                                     275       1       1       0   .abs_section_275
+     SYSTEM                                    3000       2       2       2   .common     
      Cpu_Interrupt                             C000       2       2      61   .init       
      _EntryPoint                               C002      18      24       3   .init       
      _Startup                                  C024       B      11       1   NON_BANKED  
      _InterruptVectorTable                     FF80      80     128       0   .abs_section_ff80
      Init                                    3DB000      29      41       2   .text       
      PE_low_level_init                       3DB029      42      66       2   .text       
-     main                                    3DB06B      7B     123       2   .text       
+     main                                    3DB06B      7E     126       2   .text       
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -1246,7 +1252,7 @@ Init                      USES _startupData
 PE_low_level_init         USES _PIEP _PPSP _PERP _DDRP _PUCR _PORTAB _DDRAB 
                                 _CRGINT _VREGCTRL _RDRIV _RDRAD _RDRJ _RDRM _RDRP 
                                 _RDRS _RDRT _INTCR 
-main                      USES PE_low_level_init _PORTAB _PTP 
+main                      USES PE_low_level_init _PORTAB SYSTEM _PTP 
 
 *********************************************************************************************
 DEPENDENCY TREE
@@ -1278,5 +1284,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 6
-Total size of all blocks to be downloaded: 407
+Total size of all blocks to be downloaded: 410
 

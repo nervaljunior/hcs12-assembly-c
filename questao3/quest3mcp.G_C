@@ -2,7 +2,7 @@
 ;The file contains internal information about the Processor Expert project generation
 [Options]
 ProjectName=quest3mcp
-ProjectDirectory=D:\ufma\5 periodo\arq. computadores\quest3mcp\
+ProjectDirectory=D:\ufma\5 periodo\arq. computadores\P2_arquitetura de computadores\questao3\
 DestEventsDirectory=CODE\
 DestDriversSubDirectory=
 DestDocumentationDirectory=DOC\
@@ -35,6 +35,7 @@ XtraAge0=1457629335
 GenExtraFileType0=4
 GenEventModules=1
 Line=Events
+GenMethodsInEvents=0
 GenAllModules=8
 Line=Cpu
 Line=Events
