@@ -58,7 +58,7 @@ int error;
 void main(void)
 {
   /* Write your local variable definition here */
-  int input_I;
+  int SYSTEM;
   int valueSensorA;
   int valueSensorB;
   int valueSensorC;
@@ -72,13 +72,14 @@ void main(void)
   /* Write your code here */
   while(1)
   {
-    input_I = I_GetVal();
+    SYSTEM = I_GetVal();
     valueSensorA = A_GetVal();
     valueSensorB = B_GetVal();
     valueSensorC = C_GetVal();
     valueSensorD = D_GetVal();
-   
-    if ((input_I && ((!valueSensorA && !valueSensorB && !valueSensorD) || (!valueSensorA && valueSensorC && !valueSensorD))) != 0)
+    
+    if(!SYSTEM){
+    if ((((!valueSensorA && !valueSensorB && !valueSensorD) || (!valueSensorA && valueSensorC && !valueSensorD))) != 0)
     {
       E_ClrVal();
     }
@@ -105,6 +106,9 @@ void main(void)
       Erro_SetVal();
     }
   }
+  }
+   
+    
 
   /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
   for(;;){}
